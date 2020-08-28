@@ -19,5 +19,6 @@ Hereby thank P3TERX for his amazing job: https://github.com/P3TERX/Actions-OpenW
 
 1.取消crontab frpc restart
 2.内网走代理 要取消这个 iptables -t nat -D SS_SPEC_WAN_FW -d 192.168.0.0/16 -j RETURN
+  ./usr/bin/ssr-rules 改这里的192.168.0.0/16
 
 ```
