@@ -64,7 +64,11 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        sed -i '11s/#//' feeds.conf.default
+        # sed -i 's/#//' feeds.conf.default
+        # fw876/helloworld
+        sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default 
+        # Lienol/openwrt-package
+        sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -73,11 +77,12 @@ jobs:
         ./scripts/feeds install -a
         ./scripts/feeds install -a
 
-    #- name: Import external feeds
-    #  working-directory: ./openwrt
-    #  run: |
-    #    git clone https://github.com/Lienol/openwrt-package package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        #git clone https://github.com/Lienol/openwrt-package package/lienol
+        git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+        #git clone "your_github_link" package/"your_folder_name"      
 
     - name: Configuration Customization - Build_x86_64
       env:
