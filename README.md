@@ -14,3 +14,10 @@ Hereby thank P3TERX for his amazing job: https://github.com/P3TERX/Actions-OpenW
 - Default Web Admin IP: `192.168.5.1`, username `root`，password `password`
 
 [For the details please visit my Y2B Channel (in Chinese) | 视频教程](https://www.youtube.com/c/esirplayground)
+
+```
+
+1.取消crontab frpc restart
+2.内网走代理 要取消这个 iptables -t nat -D SS_SPEC_WAN_FW -d 192.168.0.0/16 -j RETURN
+
+```
