@@ -17,8 +17,10 @@ Hereby thank P3TERX for his amazing job: https://github.com/P3TERX/Actions-OpenW
 
 ```
 
-1.取消crontab frpc restart
+1.frpc restart间隔要大些
 2.内网走代理 要取消这个 iptables -t nat -D SS_SPEC_WAN_FW -d 192.168.0.0/16 -j RETURN
   ./usr/bin/ssr-rules 改这里的192.168.0.0/16
-3.远程时appfilter时开不了， /usr/lib/lua/luci/model/cbi/appfilter:get_hostname_by_mac 里面去掉print
+3.用frpc远程时appfilter时开不了， /usr/lib/lua/luci/model/cbi/appfilter:get_hostname_by_mac 里面去掉print
+4./usr/lib/lua/luci/model/cbi/bandwidthd.lua 链接<a target='_blank' href='/bandwidthd'>bandwidthd</a>
+
 ```
