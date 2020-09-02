@@ -67,8 +67,6 @@ jobs:
         # sed -i 's/#//' feeds.conf.default
         # fw876/helloworld
         sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default 
-        # Lienol/openwrt-package
-        sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -82,6 +80,8 @@ jobs:
         #git clone https://github.com/Lienol/openwrt-package package/lienol
         git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
         git clone https://github.com/rufengsuixing/luci-app-onliner.git package/Onliner
+        git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
+        git clone https://github.com/kenzok8/small.git package/small
         #git clone "your_github_link" package/"your_folder_name"      
 
     - name: Configuration Customization - Build_x86_64
